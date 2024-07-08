@@ -14,4 +14,9 @@ Cypress.Commands.add('selectRandomDropdownOption', (dropdownSelector) => {
       cy.wrap($options[randomIndex]).click();
     });
   });
+  Cypress.Commands.add('waitForElementAndPause', (selector, waitTime = 2000) => {
+    cy.get(selector).should('exist').then(() => {
+      cy.wait(waitTime);
+    });
+  });
   
