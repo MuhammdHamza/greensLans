@@ -12,5 +12,7 @@ it("Test case # 1 : Verify that user found upon entering the valid data", () => 
     cy.get('.last-segment').should('exist');
     cy.get('.dx-texteditor-input').type('testinguser23@gmail.com');
     cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > .dx-data-row > .dx-command-edit > .dx-link-delete').click({ multiple: true });
+    cy.get('button').as('btn').click(); // Alias the button as 'btn' and click it once
+
 });
 })
