@@ -7,7 +7,7 @@ describe('Test suite for login page', () => {
     beforeEach(() => {
         cy.visit('/'); // Replace with the actual URL or path
         cy.login(); // Assuming cy.login() is defined in auth/login.cy.js
-    });
+    });  
     it("Test case # 1 : Verify that the validations are working fine or not", () => {
         cy.get('[data-item-id="/users"] > .dx-item > .dx-item-content').click({ force: true });
         cy.intercept("GET", "**/*").as('User');
