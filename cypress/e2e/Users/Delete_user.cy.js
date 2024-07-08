@@ -11,6 +11,6 @@ it("Test case # 1 : Verify that user found upon entering the valid data", () => 
     cy.waitForElementAndPause('.last-segment', 10000); // Wait for 3 seconds after the element appears
     cy.get('.last-segment').should('exist');
     cy.get('.dx-texteditor-input').type('testinguser23@gmail.com');
-    cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > .dx-data-row > .dx-command-edit > .dx-link-delete').click()
+    cy.get('.dx-datagrid-content-fixed > .dx-datagrid-table > tbody > .dx-data-row > .dx-command-edit > .dx-link-delete').click({ multiple: true });
 });
 })
