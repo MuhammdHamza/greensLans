@@ -21,12 +21,12 @@ describe('Test suite for login page', () => {
         cy.wait('@User');
         cy.get('.buttons-container > .dx-button-has-text > .dx-button-content').click({force:true});
         cy.get(':nth-child(1) > .popup-group-form-input').should('be.visible').click({force:true}); // email field
-        cy.get(':nth-child(1) > .popup-group-form-input').type('testinguser23@gmail.com');
+        cy.get(':nth-child(1) > .popup-group-form-input').type('testinguser2351@gmail.com');
         cy.get(':nth-child(2) > .popup-group-form-input > .dx-show-invalid-badge > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').click({force:true}); 
         cy.get(':nth-child(2) > .popup-group-form-input > .dx-show-invalid-badge > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').type('Pass23'); // password
         cy.get('.dx-dropdowneditor-input-wrapper > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').should('be.visible').click({force:true});
         cy.wait(200);
-        cy.get(':nth-child(1) > .dx-show-invalid-badge > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').click({force:true}).type("ADMIN").type('{enter}');
+        cy.get(':nth-child(1) > .dx-show-invalid-badge > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').click({force:true}).type('Admin{enter}');
         cy.wait(200);
         cy.get('[aria-describedby="dx-col-30"] > :nth-child(1) > .dx-datagrid-search-text').should('be.visible').click({force:true});
         cy.wait(200);
