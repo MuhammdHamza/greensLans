@@ -44,7 +44,7 @@ Cypress.Commands.add('selectRandomDropdownOption', (dropdownSelector) => {
     });
   });
   
-  Cypress.Commands.add('apiRequestWithToken', (method, url, { tokenKey = 'tokenKey', headers = {}, queryParams = {}, body = null } = {}) => {
+  Cypress.Commands.add('apiRequestWithToken', (method, url, { tokenKey = 'Authorization', headers = {}, queryParams = {}, body = null } = {}) => {
     // Get the token from localStorage
     cy.window().then((win) => {
       const token = win.localStorage.getItem(tokenKey);
@@ -57,7 +57,7 @@ Cypress.Commands.add('selectRandomDropdownOption', (dropdownSelector) => {
         method: method,
         url: url,
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `${token}`,
           ...headers
         },
         qs: queryParams, // Use the query parameters
