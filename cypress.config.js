@@ -8,5 +8,6 @@ module.exports = defineConfig({
     defaultCommandTimeout: 250000,
     baseUrl: "https://greenplusonline.onlinestar.com.my/login",
     chromeWebSecurity: false,
+  
   },
 });
