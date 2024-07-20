@@ -11,13 +11,16 @@ cy.login(); // Assuming cy.login() is defined in auth/login.cy.js
 
 });
 
-it("Test case # 1 : Verify that the validations are working fine or not", () => {
-cy.get('[data-item-id="16"] > :nth-child(1)').click();
-cy.get('[data-item-id="/arsales"] > .dx-item').click();
-cy.get('.listing-page-search-box > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').type('customer name');
-cy.get('dx-datagrid dx-gridbase-container').should('contain', 'customer name');
-
-
+it("Test case # 1 : Verify that the user is able to search data", () => {
+    cy.get('[data-item-id="16"] > :nth-child(1)').click();
+    cy.get('[data-item-id="/arsales"] > .dx-item').click();
+    cy.get('[data-item-id="16"] > :nth-child(1)').click();
+    cy.get('.dx-state-selected > .dx-item').click();
+    cy.get('.listing-page-search-box > .dx-texteditor-container > .dx-texteditor-input-container > .dx-texteditor-input').type('A0001');
+    cy.wait(3000);
+    cy.get('.dx-datagrid').should('contain', 'A0001');
+    
+    
 
 });
 
